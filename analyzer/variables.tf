@@ -23,3 +23,27 @@ variable "regions" {
     "sa-east-1",
   ]
 }
+
+# Tags
+variable "tag_name" {
+  description = "Name tag"
+  default     = "AWSLabs"
+}
+
+variable "tag_environment" {
+  description = "Environment tag"
+  default     = "Prod"
+}
+
+variable "tags_shared" {
+  description = "Other tags assigned to all resources"
+  type        = map(string)
+
+  default = {
+    Owner        = "T.Durden"
+    BusinessUnit = "Paper Street Soap Co."
+    Department   = "Mischief"
+    CostCenter   = "7741"
+    Project      = "Mayhem"
+  }
+}
