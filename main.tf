@@ -22,6 +22,12 @@ module "guardduty" {
   regions = var.regions
 }
 
+# Security Hub
+module "securityhub" {
+  source  = "./securityhub"
+  regions = var.regions
+}
+
 # IAM
 data "aws_iam_policy_document" "sns" {
   statement {
@@ -124,6 +130,3 @@ resource "aws_cloudwatch_event_target" "console" {
   rule     = aws_cloudwatch_event_rule.console.name
   arn      = aws_sns_topic.ue1.arn
 }
-
-# Security Hub
-resource "aws_securityhub_account" "main" {}
