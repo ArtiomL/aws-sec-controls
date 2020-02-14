@@ -102,25 +102,6 @@ resource "aws_accessanalyzer_analyzer" "ap-south-1" {
   )
 }
 
-# ap-northeast-3
-provider "aws" {
-  alias  = "ap-northeast-3"
-  region = "ap-northeast-3"
-}
-
-resource "aws_accessanalyzer_analyzer" "ap-northeast-3" {
-  count         = "${contains(var.regions, "ap-northeast-3") ? 1 : 0}"
-  provider      = aws.ap-northeast-3
-  analyzer_name = "acan${var.tag_name}${var.tag_environment}"
-  tags = merge(
-    local.tags,
-    var.tags_shared,
-    {
-      "Name" = "acan${var.tag_name}${var.tag_environment}"
-    },
-  )
-}
-
 # ap-northeast-2
 provider "aws" {
   alias  = "ap-northeast-2"
