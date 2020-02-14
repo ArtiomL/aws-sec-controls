@@ -1,5 +1,12 @@
 # Infrastructure
 
+locals {
+  tags = {
+    CreatedBy   = "Terraform"
+    Environment = var.tag_environment
+  }
+}
+
 # us-east-1
 provider "aws" {
   alias  = "us-east-1"
