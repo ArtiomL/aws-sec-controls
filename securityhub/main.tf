@@ -9,7 +9,6 @@ provider "aws" {
 resource "aws_securityhub_account" "us-east-1" {
   count    = "${contains(var.regions, "us-east-1") ? 1 : 0}"
   provider = aws.us-east-1
-  enable   = true
 }
 
 # us-east-2
@@ -21,7 +20,6 @@ provider "aws" {
 resource "aws_securityhub_account" "us-east-2" {
   count    = "${contains(var.regions, "us-east-2") ? 1 : 0}"
   provider = aws.us-east-2
-  enable   = true
 }
 
 # us-west-1
@@ -33,7 +31,6 @@ provider "aws" {
 resource "aws_securityhub_account" "us-west-1" {
   count    = "${contains(var.regions, "us-west-1") ? 1 : 0}"
   provider = aws.us-west-1
-  enable   = true
 }
 
 # us-west-2
@@ -45,7 +42,6 @@ provider "aws" {
 resource "aws_securityhub_account" "us-west-2" {
   count    = "${contains(var.regions, "us-west-2") ? 1 : 0}"
   provider = aws.us-west-2
-  enable   = true
 }
 
 # ap-south-1
@@ -57,7 +53,6 @@ provider "aws" {
 resource "aws_securityhub_account" "ap-south-1" {
   count    = "${contains(var.regions, "ap-south-1") ? 1 : 0}"
   provider = aws.ap-south-1
-  enable   = true
 }
 
 # ap-northeast-2
@@ -69,7 +64,6 @@ provider "aws" {
 resource "aws_securityhub_account" "ap-northeast-2" {
   count    = "${contains(var.regions, "ap-northeast-2") ? 1 : 0}"
   provider = aws.ap-northeast-2
-  enable   = true
 }
 
 # ap-southeast-1
@@ -81,7 +75,6 @@ provider "aws" {
 resource "aws_securityhub_account" "ap-southeast-1" {
   count    = "${contains(var.regions, "ap-southeast-1") ? 1 : 0}"
   provider = aws.ap-southeast-1
-  enable   = true
 }
 
 # ap-southeast-2
@@ -93,7 +86,6 @@ provider "aws" {
 resource "aws_securityhub_account" "ap-southeast-2" {
   count    = "${contains(var.regions, "ap-southeast-2") ? 1 : 0}"
   provider = aws.ap-southeast-2
-  enable   = true
 }
 
 # ap-northeast-1
@@ -105,7 +97,6 @@ provider "aws" {
 resource "aws_securityhub_account" "ap-northeast-1" {
   count    = "${contains(var.regions, "ap-northeast-1") ? 1 : 0}"
   provider = aws.ap-northeast-1
-  enable   = true
 }
 
 # ca-central-1
@@ -117,7 +108,6 @@ provider "aws" {
 resource "aws_securityhub_account" "ca-central-1" {
   count    = "${contains(var.regions, "ca-central-1") ? 1 : 0}"
   provider = aws.ca-central-1
-  enable   = true
 }
 
 # eu-central-1
@@ -129,7 +119,6 @@ provider "aws" {
 resource "aws_securityhub_account" "eu-central-1" {
   count    = "${contains(var.regions, "eu-central-1") ? 1 : 0}"
   provider = aws.eu-central-1
-  enable   = true
 }
 
 # eu-west-1
@@ -141,7 +130,6 @@ provider "aws" {
 resource "aws_securityhub_account" "eu-west-1" {
   count    = "${contains(var.regions, "eu-west-1") ? 1 : 0}"
   provider = aws.eu-west-1
-  enable   = true
 }
 
 # eu-west-2
@@ -153,7 +141,6 @@ provider "aws" {
 resource "aws_securityhub_account" "eu-west-2" {
   count    = "${contains(var.regions, "eu-west-2") ? 1 : 0}"
   provider = aws.eu-west-2
-  enable   = true
 }
 
 # eu-west-3
@@ -165,7 +152,6 @@ provider "aws" {
 resource "aws_securityhub_account" "eu-west-3" {
   count    = "${contains(var.regions, "eu-west-3") ? 1 : 0}"
   provider = aws.eu-west-3
-  enable   = true
 }
 
 # eu-north-1
@@ -177,7 +163,6 @@ provider "aws" {
 resource "aws_securityhub_account" "eu-north-1" {
   count    = "${contains(var.regions, "eu-north-1") ? 1 : 0}"
   provider = aws.eu-north-1
-  enable   = true
 }
 
 # sa-east-1
@@ -189,5 +174,4 @@ provider "aws" {
 resource "aws_securityhub_account" "sa-east-1" {
   count    = "${contains(var.regions, "sa-east-1") ? 1 : 0}"
   provider = aws.sa-east-1
-  enable   = true
 }
