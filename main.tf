@@ -12,13 +12,14 @@ provider "aws" {
 }
 
 provider "aws" {
-  alias  = "us_east_1"
+  alias  = "us-east-1"
   region = "us-east-1"
 }
 
 # GuardDuty
-resource "aws_guardduty_detector" "main" {
-  enable = true
+module "guardduty" {
+  source  = "./guardduty"
+  regions = var.regions
 }
 
 # IAM
@@ -67,7 +68,7 @@ resource "aws_sns_topic_policy" "main" {
 }
 
 resource "aws_sns_topic" "ue1" {
-  provider = aws.us_east_1
+  provider = aws.us-east-1
   name     = "top${var.tag_name}${var.tag_environment}"
 
   tags = merge(
@@ -80,7 +81,7 @@ resource "aws_sns_topic" "ue1" {
 }
 
 resource "aws_sns_topic_policy" "ue1" {
-  provider = aws.us_east_1
+  provider = aws.us-east-1
   arn      = aws_sns_topic.ue1.arn
   policy   = data.aws_iam_policy_document.sns.json
 }
@@ -105,7 +106,7 @@ resource "aws_cloudwatch_event_target" "main" {
 }
 
 resource "aws_cloudwatch_event_rule" "console" {
-  provider      = aws.us_east_1
+  provider      = aws.us-east-1
   name          = "ruleConsole${var.tag_name}${var.tag_environment}"
   description   = "Console Sign-in"
   event_pattern = file("${path.module}/patterns/console.json")
@@ -119,7 +120,7 @@ resource "aws_cloudwatch_event_rule" "console" {
 }
 
 resource "aws_cloudwatch_event_target" "console" {
-  provider = aws.us_east_1
+  provider = aws.us-east-1
   rule     = aws_cloudwatch_event_rule.console.name
   arn      = aws_sns_topic.ue1.arn
 }
