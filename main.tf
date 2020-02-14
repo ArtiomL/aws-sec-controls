@@ -22,6 +22,12 @@ module "guardduty" {
   regions = var.regions
 }
 
+# IAM Access Analyzer
+module "analyzer" {
+  source  = "./analyzer"
+  regions = var.regions
+}
+
 # Security Hub
 module "securityhub" {
   source  = "./securityhub"
@@ -41,18 +47,6 @@ data "aws_iam_policy_document" "sns" {
 
     resources = [aws_sns_topic.main.arn]
   }
-}
-
-# IAM Access Analyzer
-resource "aws_accessanalyzer_analyzer" "main" {
-  analyzer_name = "acan${var.tag_name}${var.tag_environment}"
-  tags = merge(
-    local.tags,
-    var.tags_shared,
-    {
-      "Name" = "acan${var.tag_name}${var.tag_environment}"
-    },
-  )
 }
 
 # SNS
