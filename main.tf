@@ -24,8 +24,11 @@ module "guardduty" {
 
 # IAM Access Analyzer
 module "analyzer" {
-  source  = "./analyzer"
-  regions = var.regions
+  source          = "./analyzer"
+  regions         = var.regions
+  tag_name        = var.tag_name
+  tag_environment = var.tag_environment
+  tags_shared     = var.tags_shared
 }
 
 # Security Hub
