@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "us-east-1" {
-  count         = "${contains(var.regions, "us-east-1") ? 1 : 0}"
+  count         = contains(var.regions, "us-east-1") ? 1 : 0
   provider      = aws.us-east-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -33,7 +33,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "us-east-2" {
-  count         = "${contains(var.regions, "us-east-2") ? 1 : 0}"
+  count         = contains(var.regions, "us-east-2") ? 1 : 0
   provider      = aws.us-east-2
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -52,7 +52,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "us-west-1" {
-  count         = "${contains(var.regions, "us-west-1") ? 1 : 0}"
+  count         = contains(var.regions, "us-west-1") ? 1 : 0
   provider      = aws.us-west-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -71,7 +71,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "us-west-2" {
-  count         = "${contains(var.regions, "us-west-2") ? 1 : 0}"
+  count         = contains(var.regions, "us-west-2") ? 1 : 0
   provider      = aws.us-west-2
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -90,7 +90,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "ap-south-1" {
-  count         = "${contains(var.regions, "ap-south-1") ? 1 : 0}"
+  count         = contains(var.regions, "ap-south-1") ? 1 : 0
   provider      = aws.ap-south-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -109,7 +109,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "ap-northeast-2" {
-  count         = "${contains(var.regions, "ap-northeast-2") ? 1 : 0}"
+  count         = contains(var.regions, "ap-northeast-2") ? 1 : 0
   provider      = aws.ap-northeast-2
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -128,7 +128,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "ap-southeast-1" {
-  count         = "${contains(var.regions, "ap-southeast-1") ? 1 : 0}"
+  count         = contains(var.regions, "ap-southeast-1") ? 1 : 0
   provider      = aws.ap-southeast-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -147,7 +147,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "ap-southeast-2" {
-  count         = "${contains(var.regions, "ap-southeast-2") ? 1 : 0}"
+  count         = contains(var.regions, "ap-southeast-2") ? 1 : 0
   provider      = aws.ap-southeast-2
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -166,7 +166,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "ap-northeast-1" {
-  count         = "${contains(var.regions, "ap-northeast-1") ? 1 : 0}"
+  count         = contains(var.regions, "ap-northeast-1") ? 1 : 0
   provider      = aws.ap-northeast-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -185,7 +185,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "ca-central-1" {
-  count         = "${contains(var.regions, "ca-central-1") ? 1 : 0}"
+  count         = contains(var.regions, "ca-central-1") ? 1 : 0
   provider      = aws.ca-central-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -204,7 +204,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "eu-central-1" {
-  count         = "${contains(var.regions, "eu-central-1") ? 1 : 0}"
+  count         = contains(var.regions, "eu-central-1") ? 1 : 0
   provider      = aws.eu-central-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -223,7 +223,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "eu-west-1" {
-  count         = "${contains(var.regions, "eu-west-1") ? 1 : 0}"
+  count         = contains(var.regions, "eu-west-1") ? 1 : 0
   provider      = aws.eu-west-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -242,7 +242,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "eu-west-2" {
-  count         = "${contains(var.regions, "eu-west-2") ? 1 : 0}"
+  count         = contains(var.regions, "eu-west-2") ? 1 : 0
   provider      = aws.eu-west-2
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -261,7 +261,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "eu-west-3" {
-  count         = "${contains(var.regions, "eu-west-3") ? 1 : 0}"
+  count         = contains(var.regions, "eu-west-3") ? 1 : 0
   provider      = aws.eu-west-3
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -280,7 +280,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "eu-north-1" {
-  count         = "${contains(var.regions, "eu-north-1") ? 1 : 0}"
+  count         = contains(var.regions, "eu-north-1") ? 1 : 0
   provider      = aws.eu-north-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
@@ -299,7 +299,7 @@ provider "aws" {
 }
 
 resource "aws_accessanalyzer_analyzer" "sa-east-1" {
-  count         = "${contains(var.regions, "sa-east-1") ? 1 : 0}"
+  count         = contains(var.regions, "sa-east-1") ? 1 : 0
   provider      = aws.sa-east-1
   analyzer_name = "acan${var.tag_name}${var.tag_environment}"
   tags = merge(
